@@ -9,6 +9,15 @@ static int pos_y = 0;
 static int width = HOLDER_WIDTH * BRICK_WIDTH;
 static int height = HOLDER_HEIGHT * BRICK_HEIGHT;
 
+
+std::vector<int> holder_get_bricks(){
+	return bricks;
+}
+
+void holder_set_bricks(std::vector<int> br){
+	bricks = br;
+}
+
 void holder_init(int position_x, int position_y){
 	pos_x = position_x;
 	pos_y = position_y;

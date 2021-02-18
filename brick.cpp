@@ -14,12 +14,12 @@ Color brick_color_id_to_color(int id){
 
 void brick_draw(brick br){
 	DrawRectangle(br.x, br.y, BRICK_WIDTH, BRICK_HEIGHT, LIGHTGRAY);
-	if(br.number <= 9){	
-		DrawText(TextFormat("%01i", br.number), br.x + 20, br.y + 20, 50, 
+	if(br.number <= 8){	
+		DrawText(TextFormat("%01i", br.number + 1), br.x + 20, br.y + 20, 50, 
 			brick_color_id_to_color(br.color_id));
 		}
 	else{		
-		DrawText(TextFormat("%02i", br.number), br.x + 20, br.y + 20, 50, 
+		DrawText(TextFormat("%02i", br.number + 1), br.x + 10, br.y + 20, 50, 
 			brick_color_id_to_color(br.color_id) );
 		}
 }
