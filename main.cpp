@@ -7,6 +7,7 @@
 #include "holder.h"
 #include "bag.h"
 #include "state.h"
+#include "button.h"
 
 
 void create_window(int width, int height, std::string title, int fps){
@@ -14,6 +15,10 @@ void create_window(int width, int height, std::string title, int fps){
     SetTargetFPS(fps);
 }
 
+
+void add_brick_callback(){
+	printf("Clicked!\n");
+}
 
 void loop(){
     while (!WindowShouldClose())    {
@@ -30,8 +35,15 @@ void loop(){
 		grid_draw();	
 
 		DrawText(TextFormat("%i", brick_get_id_by_pos(GetMousePosition().x, GetMousePosition().y)), 10, 10, 15, BLACK);	
-		bag_draw_content(10, 30); 
+		bag_draw_content(10, 30);
+
+		button_draw("Add brick", 10, 10, 50, 50, add_brick_callback);
+
     	EndDrawing();
+
+		if(IsMouseButtonPressed(MOUSE_LEFT_BUTTON)){
+			button_update_all(GetMousePosition().x, GetMousePosition().y);
+		}
 
 		if(IsKeyPressed(KEY_S)){
 			state_save();

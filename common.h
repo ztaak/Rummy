@@ -5,6 +5,8 @@
 #include <vector>
 #include <memory>
 #include <algorithm>
+#include <cstring>
+#include <functional>
 
 const int NUM_OF_BRICKS_AT_START = 14;
 const int NUM_OF_BRICKS_IN_GAME = 104;
